@@ -12,6 +12,7 @@ var app = new Vue({
     self.scanner.addListener('scan', function (content, image) {
       self.playSound('beep-07.mp3');
       self.scans.unshift({ date: +(Date.now()), content: content });
+	  self.scans.unshift({ date: +(Date.now()), content: 'OK' });
     });
     Instascan.Camera.getCameras().then(function (cameras) {
       self.cameras = cameras;
